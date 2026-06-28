@@ -1,0 +1,289 @@
+/* ============================================
+   AmnShield Guide — Scoped Styles
+   CSS-only phone frame + scroll-synced transitions
+   ============================================ */
+
+/* ----- Phone Frame (CSS-only) ----- */
+.phone-frame {
+  width: 280px;
+  height: 572px;
+  border-radius: 2.5rem;
+  border: 6px solid #1e293b;
+  background: #0f172a;
+  box-shadow:
+    0 0 0 2px #334155,
+    0 25px 60px -12px rgba(10, 37, 64, 0.35),
+    0 12px 24px -8px rgba(10, 37, 64, 0.2);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Notch */
+.phone-frame::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 22px;
+  background: #1e293b;
+  border-radius: 0 0 14px 14px;
+  z-index: 10;
+}
+
+/* Home indicator bar */
+.phone-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #475569;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* ----- Phone Screen Container ----- */
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+}
+
+/* ----- Individual Screenshots ----- */
+.phone-screen .screen-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+}
+
+.phone-screen .screen-slide.active {
+  opacity: 1;
+}
+
+.phone-screen .screen-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ----- Sticky Phone Column ----- */
+.guide-walkthrough {
+  position: relative;
+}
+
+.guide-phone-col {
+  position: sticky;
+  top: 7rem;
+  height: fit-content;
+  align-self: start;
+}
+
+/* ----- Step Sections ----- */
+.guide-step {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.guide-step.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Step number badge */
+.step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* ----- Voiceover Toggle ----- */
+.voiceover-toggle {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.5rem;
+  z-index: 40;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2px solid #d1d5db;
+  background: #ffffff;
+  color: #4b5563;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.voiceover-toggle:hover {
+  border-color: #D4AF37;
+  color: #D4AF37;
+  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.2);
+}
+
+.voiceover-toggle:focus-visible {
+  outline: 2px solid #D4AF37;
+  outline-offset: 2px;
+}
+
+.voiceover-toggle[aria-pressed="true"] {
+  background: #0A2540;
+  border-color: #D4AF37;
+  color: #D4AF37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15), 0 4px 16px rgba(10, 37, 64, 0.3);
+}
+
+.voiceover-toggle .pulse-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid #D4AF37;
+  opacity: 0;
+  animation: none;
+}
+
+.voiceover-toggle[aria-pressed="true"] .pulse-ring {
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+/* ----- Progress Dots ----- */
+.guide-progress {
+  position: fixed;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.guide-progress .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.guide-progress .dot.active {
+  background: #D4AF37;
+  transform: scale(1.4);
+  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* ----- Setup Cards ----- */
+.setup-card {
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.setup-card:hover {
+  border-color: #D4AF37;
+  box-shadow: 0 8px 24px rgba(10, 37, 64, 0.08);
+}
+
+/* ----- Scroll Indicator ----- */
+.scroll-indicator {
+  animation: scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes scroll-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ----- Mobile Responsive ----- */
+@media (max-width: 1023px) {
+  .guide-phone-col {
+    position: relative;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .phone-frame {
+    width: 240px;
+    height: 490px;
+  }
+
+  .guide-step {
+    min-height: 40vh;
+  }
+
+  .guide-progress {
+    display: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .phone-frame {
+    width: 200px;
+    height: 408px;
+    border-width: 4px;
+    border-radius: 2rem;
+  }
+
+  .phone-frame::before {
+    width: 60px;
+    height: 18px;
+    top: 6px;
+  }
+
+  .voiceover-toggle {
+    bottom: 5rem;
+    right: 1rem;
+    width: 42px;
+    height: 42px;
+  }
+}
+
+/* ----- Reduced Motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .phone-screen .screen-slide {
+    transition: opacity 0.01s;
+  }
+
+  .guide-step {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  .voiceover-toggle .pulse-ring {
+    animation: none;
+  }
+}

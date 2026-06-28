@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Docs | AmnShield</title>
+    <meta name="description" content="AmnShield is a privacy-first digital protection suite — app blocker, keyword filter, smart content moderation, and intentional focus tools — built for Muslims who want healthier digital habits without compromising their data." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN + design-system config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0A2540',
+              'on-primary': '#ffffff',
+              'primary-container': '#c8d8f0',
+              'on-primary-container': '#0A2540',
+              secondary: '#D4AF37',
+              'on-secondary': '#0A2540',
+              'secondary-container': '#fdf3c7',
+              'on-secondary-container': '#5a460a',
+              'surface-container-lowest': '#ffffff',
+              'surface-container-low': '#f5f7fb',
+              'surface-container': '#edf0f6',
+              'surface-container-high': '#e3e8f0',
+              'surface-container-highest': '#d6dce8',
+              'surface-bright': '#fafbfd',
+              'on-surface': '#111827',
+              'on-surface-variant': '#4b5563',
+              outline: '#6b7280',
+              'outline-variant': '#d1d5db',
+              background: '#f8f9fc',
+              'inverse-surface': '#1e2a3a',
+              'inverse-on-surface': '#9ca3af',
+              error: '#b91c1c',
+              'on-error': '#ffffff',
+            },
+            fontFamily: {
+              display: ['Source Serif 4', 'Georgia', 'serif'],
+              headline: ['Source Serif 4', 'Georgia', 'serif'],
+              body: ['Inter', 'sans-serif'],
+              label: ['Inter', 'sans-serif'],
+              arabic: ['Amiri', 'serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body { background-color: #f8f9fc; color: #111827; }
+      html.dark body { background-color: #0b1220; color: #e5e7eb; }
+      html.dark .bg-surface-container { background-color: #111827; }
+      html.dark .bg-surface-container-low { background-color: #0f172a; }
+      html.dark .bg-surface-container-lowest { background-color: #1e293b; }
+      html.dark .bg-surface-container-high { background-color: #334155; }
+      html.dark .border-outline-variant { border-color: #475569; }
+      html.dark .text-primary { color: #D4AF37; } 
+      html.dark .bg-primary { background-color: #D4AF37; color: #0A2540; } 
+      html.dark .text-on-surface-variant { color: #94a3b8; }
+      html.dark .text-on-surface { color: #f8fafc; }
+    </style>
+  
+</head>
+<body class="font-body text-base antialiased transition-colors duration-300 bg-surface-container-lowest text-on-surface">
+    <header class="bg-surface-container-lowest/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-8 rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="h-8 w-8 rounded bg-primary text-on-primary items-center justify-center font-bold">A</div>
+          <span class="text-xl font-bold text-primary font-headline">AmnShield</span>
+        </a>
+        <nav class="hidden md:flex gap-8">
+          <a href="/" class="text-sm font-bold text-secondary transition">Home</a>
+          <a href="/download/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Download</a>
+          <a href="/guide/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Guide</a>
+          <a href="/faq/" class="text-sm font-medium text-on-surface hover:text-secondary transition">FAQ</a>
+          <a href="/support/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Support</a>
+          <a href="/docs/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Docs</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/download/" class="bg-primary text-on-primary px-5 py-2 text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition">Get the App</a>
+        </div>
+      </div>
+    </header>
+    <main class="pt-32 pb-16 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-12 border-b border-outline-variant pb-6">AmnShield <span class="text-secondary">Docs</span></h1>
+        <div class="prose prose-slate dark:prose-invert prose-headings:font-headline prose-headings:text-primary prose-a:text-secondary max-w-none">
+            
+            
+            
+            
+      
+      <section class="container mb-16">
+        
+
+  <p>Welcome to the official documentation for AmnShield. This guide will help you configure the app for maximum digital protection and intentional focus.</p>
+
+  <h2>1. Initial Setup & Permissions</h2>
+  <p>To function effectively, AmnShield requires a few core Android permissions. Upon first launch, you will be guided to enable:</p>
+  <ul>
+    <li><strong>Accessibility Service:</strong> The backbone of AmnShield. It detects current apps and reads on-screen text to enforce keyword blocks.</li>
+    <li><strong>Usage Access:</strong> Allows AmnShield to track screen time and enforce Launch Limits.</li>
+    <li><strong>Display Over Other Apps:</strong> Required to show the block screen or warning overlay when an infraction occurs.</li>
+  </ul>
+
+  <h2>2. Core Features</h2>
+  <h3>App Blocker & Schedules</h3>
+  <p>Navigate to the <strong>Blocks</strong> dashboard to manage your app restrictions. You can create grouped schedules (e.g., blocking all social media from 9 AM to 5 PM) or apply Launch Limits to restrict how many times you can open an app per day.</p>
+  
+  <h3>Focus Mode</h3>
+  <p>Focus Mode is designed for deep work. When activated, it locks down all distracting apps for a set duration. You can configure which apps are considered "distracting" in the Focus Mode settings.</p>
+
+  <h3>Keyword Blocker</h3>
+  <p>Add specific words to your Keyword Blocklist. If these words appear on your screen (in a browser, social app, etc.), AmnShield will immediately block the view or navigate back.</p>
+
+  <h2>3. Website Blocker &amp; Filter Packs</h2>
+  <p>AmnShield features a local Website Blocker that filters adult domains and distracting websites offline.</p>
+  <ul>
+    <li><strong>Enable Website Blocker:</strong> Go to the Blocks dashboard -> Website Blocker -> Toggle ON.</li>
+    <li><strong>Filter Packs:</strong> Enable adult domain list (50k+ domains), social media domains, or gaming domains.</li>
+    <li><strong>Exceptions:</strong> Add custom domains to the blocklist or whitelist to customize your filtering.</li>
+  </ul>
+
+  <h2>4. Error Reporting</h2>
+  <p>If you encounter issues, AmnShield provides a local-only diagnostic tool. Go to <strong>Settings -> Error Reporting</strong>. You can view logs locally, and if you need help, you can export them and email them directly to our support team. No logs are ever sent automatically.</p>
+
+
+      </section>
+    
+        
+        
+        
+        </div>
+    </main>
+    <footer class="bg-surface-container-lowest border-t border-outline-variant py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+          <a href="/" class="flex items-center gap-3 grayscale opacity-80">
+            <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-6 rounded" onerror="this.style.display='none';" />
+            <span class="text-lg font-bold text-on-surface-variant font-headline">AmnShield</span>
+          </a>
+          <p class="text-sm text-on-surface-variant text-center flex items-center gap-1 flex-wrap justify-center">
+            Built by <a href="https://alhaq.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Al-Haq Studio</a>. Premium support provided by the <a href="https://alhaq-initiative.org" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium flex items-center gap-1"><img src="/assets/images/alhaq_logo.png" alt="Al-Haq Logo" class="h-4 inline" onerror="this.style.display='none';"/> Al-Haq Initiative</a>.
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-6 border-t border-outline-variant/50">
+          <div class="flex gap-6 flex-wrap justify-center">
+            <a href="/legal/privacy/" class="text-sm text-on-surface-variant hover:text-secondary transition">Privacy Policy</a>
+            <a href="/legal/terms/" class="text-sm text-on-surface-variant hover:text-secondary transition">Terms of Service</a>
+            <a href="/guide/" class="text-sm text-on-surface-variant hover:text-secondary transition">App Guide</a>
+            <a href="/support/" class="text-sm text-on-surface-variant hover:text-secondary transition">Support Hub</a>
+            <a href="/docs/" class="text-sm text-on-surface-variant hover:text-secondary transition">Documentation</a>
+            <a href="mailto:support@alhaq.uk" class="text-sm text-on-surface-variant hover:text-secondary transition">Contact</a>
+          </div>
+          <div class="text-xs text-on-surface-variant">© 2026 Al-Haq Studio. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/assistant.js"></script>
+    <script src="/assets/js/preferences.js"></script>
+</body>
+</html>

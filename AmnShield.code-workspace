@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Alhaq-Website"
+		},
+		{
+			"path": "../ADSS-Website"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Alhaq-Website"
+	}
+}

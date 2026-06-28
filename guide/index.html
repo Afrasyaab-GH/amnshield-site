@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App Guide | AmnShield</title>
+    <meta name="description" content="Learn how to set up and use AmnShield — a step-by-step visual guide to app blocking, keyword filtering, focus mode, usage tracking, and privacy-first digital protection." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;700&family=Inter:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+    <!-- Tailwind CDN + design-system config -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#0A2540',
+              'on-primary': '#ffffff',
+              'primary-container': '#c8d8f0',
+              'on-primary-container': '#0A2540',
+              secondary: '#D4AF37',
+              'on-secondary': '#0A2540',
+              'secondary-container': '#fdf3c7',
+              'on-secondary-container': '#5a460a',
+              'surface-container-lowest': '#ffffff',
+              'surface-container-low': '#f5f7fb',
+              'surface-container': '#edf0f6',
+              'surface-container-high': '#e3e8f0',
+              'surface-container-highest': '#d6dce8',
+              'surface-bright': '#fafbfd',
+              'on-surface': '#111827',
+              'on-surface-variant': '#4b5563',
+              outline: '#6b7280',
+              'outline-variant': '#d1d5db',
+              background: '#f8f9fc',
+              'inverse-surface': '#1e2a3a',
+              'inverse-on-surface': '#9ca3af',
+              error: '#b91c1c',
+              'on-error': '#ffffff',
+            },
+            fontFamily: {
+              display: ['Source Serif 4', 'Georgia', 'serif'],
+              headline: ['Source Serif 4', 'Georgia', 'serif'],
+              body: ['Inter', 'sans-serif'],
+              label: ['Inter', 'sans-serif'],
+              arabic: ['Amiri', 'serif'],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      body { background-color: #f8f9fc; color: #111827; }
+      html.dark body { background-color: #0b1220; color: #e5e7eb; }
+      html.dark .bg-surface-container { background-color: #111827; }
+      html.dark .bg-surface-container-low { background-color: #0f172a; }
+      html.dark .bg-surface-container-lowest { background-color: #1e293b; }
+      html.dark .bg-surface-container-high { background-color: #334155; }
+      html.dark .border-outline-variant { border-color: #475569; }
+      html.dark .text-primary { color: #D4AF37; } 
+      html.dark .bg-primary { background-color: #D4AF37; color: #0A2540; } 
+      html.dark .text-on-surface-variant { color: #94a3b8; }
+      html.dark .text-on-surface { color: #f8fafc; }
+    </style>
+    <link rel="stylesheet" href="/assets/css/guide.css" />
+  </head>
+  <body class="font-body text-base antialiased transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="bg-surface-container-lowest/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-8 rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+          <div style="display:none;" class="h-8 w-8 rounded bg-primary text-on-primary items-center justify-center font-bold">A</div>
+          <span class="text-xl font-bold text-primary font-headline">AmnShield</span>
+        </a>
+        <nav class="hidden md:flex gap-8">
+          <a href="/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Home</a>
+          <a href="/download/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Download</a>
+          <a href="/guide/" class="text-sm font-bold text-secondary transition">Guide</a>
+          <a href="/faq/" class="text-sm font-medium text-on-surface hover:text-secondary transition">FAQ</a>
+          <a href="/support/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Support</a>
+          <a href="/docs/" class="text-sm font-medium text-on-surface hover:text-secondary transition">Docs</a>
+        </nav>
+        <div class="flex items-center gap-4">
+          <a href="/download/" class="bg-primary text-on-primary px-5 py-2 text-sm font-semibold uppercase tracking-wider hover:opacity-90 transition">Get the App</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-24 pb-16">
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- HERO                                        -->
+      <!-- ═══════════════════════════════════════════ -->
+      <section class="bg-surface-container py-20 md:py-28 relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          <span class="inline-block bg-secondary/20 text-secondary border border-secondary/30 px-4 py-1 text-xs font-bold uppercase tracking-widest mb-6 rounded-full">Step-by-Step Guide</span>
+          <h1 class="text-4xl md:text-5xl font-display font-bold text-primary mb-6 leading-tight">
+            Get Started with <span class="text-secondary">AmnShield</span>
+          </h1>
+          <p class="text-lg text-on-surface-variant max-w-2xl mx-auto mb-10">
+            A visual walkthrough of every core feature — from setting up your first block rule to tracking your screen time. Scroll through to see the app in action.
+          </p>
+          <div class="scroll-indicator text-on-surface-variant flex flex-col items-center gap-2">
+            <span class="text-xs uppercase tracking-widest font-medium">Scroll to explore</span>
+            <span class="material-symbols-outlined text-secondary">keyboard_arrow_down</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- SCROLL-SYNCED WALKTHROUGH                   -->
+      <!-- ═══════════════════════════════════════════ -->
+      <section class="py-16 md:py-24 guide-walkthrough">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          <div class="text-center mb-16">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">Features</span>
+            <h2 class="text-3xl md:text-4xl font-headline font-bold text-primary">Explore the <span class="text-secondary">App</span></h2>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+
+            <!-- Left: Sticky Phone -->
+            <div class="guide-phone-col order-1 lg:order-1">
+              <div class="phone-frame mx-auto">
+                <div class="phone-screen">
+                  <div class="screen-slide active" data-screen="0">
+                    <img src="/assets/images/guide/home.png" alt="AmnShield Home Dashboard showing protection status and feature chips" loading="lazy" />
+                  </div>
+                  <div class="screen-slide" data-screen="1">
+                    <img src="/assets/images/guide/blocks.png" alt="AmnShield Blocks screen with toggle switches for App Blocker, Keyword Filter, and Focus Mode" loading="lazy" />
+                  </div>
+                  <div class="screen-slide" data-screen="2">
+                    <img src="/assets/images/guide/keywords.png" alt="AmnShield Keyword Blocker configuration with active keyword chips" loading="lazy" />
+                  </div>
+                  <div class="screen-slide" data-screen="3">
+                    <img src="/assets/images/guide/focus.png" alt="AmnShield Focus Mode timer setup with app selection" loading="lazy" />
+                  </div>
+                  <div class="screen-slide" data-screen="4">
+                    <img src="/assets/images/guide/stats.png" alt="AmnShield Usage Stats with screen time chart and top apps" loading="lazy" />
+                  </div>
+                  <div class="screen-slide" data-screen="5">
+                    <img src="/assets/images/guide/settings.png" alt="AmnShield Settings screen with theme, protection, and privacy options" loading="lazy" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right: Step Descriptions -->
+            <div class="order-2 lg:order-2 space-y-4">
+
+              <!-- Step 1: Home -->
+              <div id="step-home" class="guide-step">
+                <div class="bg-surface-container-lowest border border-outline-variant p-8 md:p-10 w-full">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number bg-primary text-on-primary">1</div>
+                    <div>
+                      <h3 class="text-xl font-bold text-primary font-headline">Home Dashboard</h3>
+                      <p class="text-xs text-secondary font-bold uppercase tracking-wider mt-1">Your protection at a glance</p>
+                    </div>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    The Home screen shows your current protection status — how many features are active, today's screen time, reels scrolled, and your daily goal progress. Tap any feature chip to jump straight to its configuration.
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-base">shield</span>
+                    <span>Protection status updates in real time</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 2: Blocks -->
+              <div id="step-blocks" class="guide-step">
+                <div class="bg-surface-container-lowest border border-outline-variant p-8 md:p-10 w-full">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number bg-primary text-on-primary">2</div>
+                    <div>
+                      <h3 class="text-xl font-bold text-primary font-headline">Blocks &amp; Rules</h3>
+                      <p class="text-xs text-secondary font-bold uppercase tracking-wider mt-1">Your protection control centre</p>
+                    </div>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    Toggle App Blocker, Keyword Filter, Website Blocker, and Focus Mode with a single tap. Under Advanced Rules, set up cheat hours for controlled access windows, recurring block schedules, and per-app launch limits.
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-base">lock</span>
+                    <span>Core Protection &amp; Advanced Rules in one place</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 3: Keywords -->
+              <div id="step-keywords" class="guide-step">
+                <div class="bg-surface-container-lowest border border-outline-variant p-8 md:p-10 w-full">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number bg-primary text-on-primary">3</div>
+                    <div>
+                      <h3 class="text-xl font-bold text-primary font-headline">Keyword Filter</h3>
+                      <p class="text-xs text-secondary font-bold uppercase tracking-wider mt-1">Real-time on-screen detection</p>
+                    </div>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    Add words to your blocklist — when any keyword appears on-screen in any app, AmnShield instantly blocks the view or navigates back. Supports wildcards and pre-configured content packs. All detection runs locally via the Accessibility Service.
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-base">search</span>
+                    <span>No keywords ever leave your device</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4: Focus -->
+              <div id="step-focus" class="guide-step">
+                <div class="bg-surface-container-lowest border border-outline-variant p-8 md:p-10 w-full">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number bg-primary text-on-primary">4</div>
+                    <div>
+                      <h3 class="text-xl font-bold text-primary font-headline">Focus Mode</h3>
+                      <p class="text-xs text-secondary font-bold uppercase tracking-wider mt-1">Deep work, no distractions</p>
+                    </div>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    Start a timed focus session — choose your duration, select which apps to lock down, and let AmnShield handle the rest. Track your earned focus minutes and build a measurable habit over time. Supports auto-focus schedules for recurring sessions.
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-base">my_location</span>
+                    <span>15-minute to 2-hour sessions with app selection</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 5: Stats -->
+              <div id="step-stats" class="guide-step">
+                <div class="bg-surface-container-lowest border border-outline-variant p-8 md:p-10 w-full">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number bg-primary text-on-primary">5</div>
+                    <div>
+                      <h3 class="text-xl font-bold text-primary font-headline">Usage Stats</h3>
+                      <p class="text-xs text-secondary font-bold uppercase tracking-wider mt-1">Know your habits, change them</p>
+                    </div>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    See your daily screen time, most-used apps, reels scrolled, and blocking events. Drill into per-app breakdowns with website visit tracking. All data stays on your device — AmnShield has no servers collecting your activity.
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-base">bar_chart</span>
+                    <span>100% local data, zero cloud uploads</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 6: Settings -->
+              <div id="step-settings" class="guide-step">
+                <div class="bg-surface-container-lowest border border-outline-variant p-8 md:p-10 w-full">
+                  <div class="flex items-start gap-4 mb-4">
+                    <div class="step-number bg-primary text-on-primary">6</div>
+                    <div>
+                      <h3 class="text-xl font-bold text-primary font-headline">Settings</h3>
+                      <p class="text-xs text-secondary font-bold uppercase tracking-wider mt-1">Make it yours</p>
+                    </div>
+                  </div>
+                  <p class="text-on-surface-variant text-sm leading-relaxed mb-4">
+                    Choose from five visual themes — Default, Gradient, Emerald, Sunset, or Purple. Enable anti-uninstall protection with password or timed locks. Configure daily report notifications, manage error reporting preferences, and review your privacy settings.
+                  </p>
+                  <div class="flex items-center gap-2 text-xs text-on-surface-variant">
+                    <span class="material-symbols-outlined text-secondary text-base">tune</span>
+                    <span>5 themes, anti-uninstall lock, full privacy control</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- SETUP CHECKLIST                             -->
+      <!-- ═══════════════════════════════════════════ -->
+      <section class="bg-surface-container py-20">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center mb-14">
+            <span class="text-xs font-bold uppercase tracking-[0.2em] text-secondary mb-2 block">First Launch</span>
+            <h2 class="text-3xl md:text-4xl font-headline font-bold text-primary">Required <span class="text-secondary">Permissions</span></h2>
+            <p class="text-on-surface-variant mt-4 max-w-xl mx-auto text-sm">AmnShield needs three Android permissions to protect you. Each one is explained below — we only ask for what we need, and nothing leaves your device.</p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Permission 1 -->
+            <article class="setup-card bg-surface-container-lowest border border-outline-variant p-8">
+              <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-5">
+                <span class="material-symbols-outlined text-primary text-2xl">accessibility_new</span>
+              </div>
+              <h3 class="text-lg font-bold text-primary mb-2">Accessibility Service</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                The backbone of AmnShield. It detects which app is in the foreground and reads on-screen text to enforce keyword blocks — all processing happens on-device.
+              </p>
+            </article>
+            <!-- Permission 2 -->
+            <article class="setup-card bg-surface-container-lowest border border-outline-variant p-8">
+              <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-5">
+                <span class="material-symbols-outlined text-primary text-2xl">data_usage</span>
+              </div>
+              <h3 class="text-lg font-bold text-primary mb-2">Usage Access</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Allows AmnShield to measure your screen time and enforce Launch Limits. Required for the Stats dashboard and daily usage reports.
+              </p>
+            </article>
+            <!-- Permission 3 -->
+            <article class="setup-card bg-surface-container-lowest border border-outline-variant p-8">
+              <div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center mb-5">
+                <span class="material-symbols-outlined text-primary text-2xl">layers</span>
+              </div>
+              <h3 class="text-lg font-bold text-primary mb-2">Display Over Apps</h3>
+              <p class="text-sm text-on-surface-variant leading-relaxed">
+                Required to show the block screen or Smart Blur overlay when a restricted app or keyword is detected. Without this, AmnShield can't visually intervene.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══════════════════════════════════════════ -->
+      <!-- CTA                                         -->
+      <!-- ═══════════════════════════════════════════ -->
+      <section class="py-20">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 class="text-3xl md:text-4xl font-headline font-bold text-primary mb-4">Ready to take <span class="text-secondary">control</span>?</h2>
+          <p class="text-on-surface-variant mb-8 max-w-lg mx-auto">Download AmnShield from Google Play and set up your first protection rules in under two minutes.</p>
+          <div class="flex flex-wrap justify-center gap-4">
+            <a href="/download/" class="bg-primary text-on-primary px-8 py-4 text-sm font-bold uppercase tracking-widest hover:opacity-90 transition">Download Now</a>
+            <a href="/docs/" class="border border-primary text-primary px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-surface-container-high transition">Read Full Docs</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Progress Dots (desktop) -->
+    <nav class="guide-progress" aria-label="Guide step navigation">
+      <button class="dot active" aria-label="Step 1: Home Dashboard" title="Home Dashboard"></button>
+      <button class="dot" aria-label="Step 2: Blocks and Rules" title="Blocks & Rules"></button>
+      <button class="dot" aria-label="Step 3: Keyword Filter" title="Keyword Filter"></button>
+      <button class="dot" aria-label="Step 4: Focus Mode" title="Focus Mode"></button>
+      <button class="dot" aria-label="Step 5: Usage Stats" title="Usage Stats"></button>
+      <button class="dot" aria-label="Step 6: Settings" title="Settings"></button>
+    </nav>
+
+    <!-- Voiceover Toggle -->
+    <button id="voiceover-toggle" class="voiceover-toggle" aria-pressed="false" aria-label="Toggle voiceover narration" title="Toggle voiceover narration">
+      <span class="pulse-ring"></span>
+      <span class="material-symbols-outlined text-xl">volume_up</span>
+    </button>
+
+    <footer class="bg-surface-container-lowest border-t border-outline-variant py-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+          <a href="/" class="flex items-center gap-3 grayscale opacity-80">
+            <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-6 rounded" onerror="this.style.display='none';" />
+            <span class="text-lg font-bold text-on-surface-variant font-headline">AmnShield</span>
+          </a>
+          <p class="text-sm text-on-surface-variant text-center flex items-center gap-1 flex-wrap justify-center">
+            Built by <a href="https://alhaq.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Al-Haq Studio</a>. Premium support provided by the <a href="https://alhaq-initiative.org" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium flex items-center gap-1"><img src="/assets/images/alhaq_logo.png" alt="Al-Haq Logo" class="h-4 inline" onerror="this.style.display='none';"/> Al-Haq Initiative</a>.
+          </p>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-6 border-t border-outline-variant/50">
+          <div class="flex gap-6 flex-wrap justify-center">
+            <a href="/legal/privacy/" class="text-sm text-on-surface-variant hover:text-secondary transition">Privacy Policy</a>
+            <a href="/legal/terms/" class="text-sm text-on-surface-variant hover:text-secondary transition">Terms of Service</a>
+            <a href="/support/" class="text-sm text-on-surface-variant hover:text-secondary transition">Support Hub</a>
+            <a href="/docs/" class="text-sm text-on-surface-variant hover:text-secondary transition">Documentation</a>
+            <a href="mailto:support@alhaq.uk" class="text-sm text-on-surface-variant hover:text-secondary transition">Contact</a>
+          </div>
+          <div class="text-xs text-on-surface-variant">© 2026 Al-Haq Studio. All rights reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/guide.js" defer></script>
+    <script src="/assets/js/assistant.js"></script>
+    <script src="/assets/js/preferences.js"></script>
+  </body>
+</html>
