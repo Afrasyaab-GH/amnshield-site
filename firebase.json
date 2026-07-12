@@ -7,6 +7,13 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/premium",
+        "destination": "https://alhaqstudio.lemonsqueezy.com/checkout/buy/745c25cb-e4ad-4d97-a0b4-6abdafa7887d",
+        "type": 302
+      }
+    ],
     "headers": [
       {
         "source": "/**",
