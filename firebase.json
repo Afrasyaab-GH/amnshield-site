@@ -5,12 +5,23 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "service_account.json",
+      "testers.json",
+      "sync-testers.js",
+      "package.json",
+      "package-lock.json",
+      "AmnShield.code-workspace"
     ],
     "redirects": [
       {
         "source": "/premium",
         "destination": "https://alhaqstudio.lemonsqueezy.com/checkout/buy/745c25cb-e4ad-4d97-a0b4-6abdafa7887d",
+        "type": 302
+      },
+      {
+        "source": "/tester-signup",
+        "destination": "https://forms.gle/CBHKiLqF7XiXq6Jq7",
         "type": 302
       }
     ],

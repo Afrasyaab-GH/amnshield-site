@@ -2,3 +2,12 @@ node_modules/
 .vscode/
 .DS_Store
 *.log
+
+# Security & local DB
+service_account.json
+testers.db
+testers.json
+
+# Firebase local cache
+.firebase/
+
