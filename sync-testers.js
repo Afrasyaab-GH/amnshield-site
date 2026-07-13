@@ -196,6 +196,7 @@ async function main() {
       console.log('--------------------------------------------------');
       console.log(pending.map(t => t.email).join(', '));
       console.log('==================================================');
+      console.log('\n💡 Tip: Once added to Play Console, send them the email template from invitation-email.md!');
     }
 
   } catch (error) {
