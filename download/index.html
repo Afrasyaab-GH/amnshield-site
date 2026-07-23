@@ -14,74 +14,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
 
     <!-- Tailwind CDN + design-system config -->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries,typography"></script>
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            colors: {
-              primary: '#0A2540',
-              'on-primary': '#ffffff',
-              'primary-container': '#c8d8f0',
-              'on-primary-container': '#0A2540',
-              secondary: '#D4AF37',
-              'on-secondary': '#0A2540',
-              'secondary-container': '#fdf3c7',
-              'on-secondary-container': '#5a460a',
-              'surface-container-lowest': '#ffffff',
-              'surface-container-low': '#f5f7fb',
-              'surface-container': '#edf0f6',
-              'surface-container-high': '#e3e8f0',
-              'surface-container-highest': '#d6dce8',
-              'surface-bright': '#fafbfd',
-              'on-surface': '#111827',
-              'on-surface-variant': '#4b5563',
-              outline: '#6b7280',
-              'outline-variant': '#d1d5db',
-              background: '#f8f9fc',
-              'inverse-surface': '#1e2a3a',
-              'inverse-on-surface': '#9ca3af',
-              error: '#b91c1c',
-              'on-error': '#ffffff',
-            },
-            fontFamily: {
-              display: ['Source Serif 4', 'Georgia', 'serif'],
-              headline: ['Source Serif 4', 'Georgia', 'serif'],
-              body: ['Inter', 'sans-serif'],
-              label: ['Inter', 'sans-serif'],
-              arabic: ['Amiri', 'serif'],
-            },
-          },
-        },
-      };
-    </script>
-    <style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        display: inline-block;
-        vertical-align: middle;
-      }
-      body { background-color: #f8f9fc; color: #111827; }
-      html.dark body { background-color: #0b1220; color: #e5e7eb; }
-      html.dark .bg-surface-container { background-color: #111827; }
-      html.dark .bg-surface-container-low { background-color: #0f172a; }
-      html.dark .bg-surface-container-lowest { background-color: #1e293b; }
-      html.dark .bg-surface-container-high { background-color: #334155; }
-      html.dark .border-outline-variant { border-color: #475569; }
-      html.dark .text-primary { color: #D4AF37; } 
-      html.dark .bg-primary { background-color: #D4AF37; color: #0A2540; } 
-      html.dark .text-on-surface-variant { color: #94a3b8; }
-      html.dark .text-on-surface { color: #f8fafc; }
-    </style>
+    <link rel="stylesheet" href="/assets/css/tailwind.css" />
+    <link rel="stylesheet" href="/assets/css/site-theme.css" />
+    
   
 </head>
 <body class="font-body text-base antialiased transition-colors duration-300 bg-surface-container-lowest text-on-surface">
     <header class="bg-surface-container-lowest/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-outline-variant">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <a href="/" class="flex items-center gap-3">
-          <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-8 rounded" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
-          <div style="display:none;" class="h-8 w-8 rounded bg-primary text-on-primary items-center justify-center font-bold">A</div>
+          <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-8 rounded" data-fallback="next-flex" />
+          <div class="hidden h-8 w-8 rounded bg-primary text-on-primary items-center justify-center font-bold">A</div>
           <span class="text-xl font-bold text-primary font-headline">AmnShield</span>
         </a>
         <nav class="hidden md:flex gap-8">
@@ -150,11 +93,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
           <a href="/" class="flex items-center gap-3 grayscale opacity-80">
-            <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-6 rounded" onerror="this.style.display='none';" />
+            <img src="/assets/images/amnshield_logo.png" alt="AmnShield Logo" class="h-6 rounded" data-fallback="hide" />
             <span class="text-lg font-bold text-on-surface-variant font-headline">AmnShield</span>
           </a>
           <p class="text-sm text-on-surface-variant text-center flex items-center gap-1 flex-wrap justify-center">
-            Built by <a href="https://alhaq.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Al-Haq Studio</a>. Premium support provided by the <a href="https://alhaq-initiative.org" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium flex items-center gap-1"><img src="/assets/images/alhaq_logo.png" alt="Al-Haq Logo" class="h-4 inline" onerror="this.style.display='none';"/> Al-Haq Initiative</a>.
+            Built by <a href="https://alhaq.uk" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium">Al-Haq Studio</a>. Premium support provided by the <a href="https://alhaq-initiative.org" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-medium flex items-center gap-1"><img src="/assets/images/alhaq_logo.png" alt="Al-Haq Logo" class="h-4 inline" data-fallback="hide"/> Al-Haq Initiative</a>.
           </p>
         </div>
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 pt-6 border-t border-outline-variant/50">
@@ -171,6 +114,7 @@
       </div>
     </footer>
     <script src="/assets/js/main.js" defer></script>
+    <script src="/assets/js/image-fallbacks.js" defer></script>
     <script src="/assets/js/assistant.js"></script>
     <script src="/assets/js/preferences.js"></script>
 </body>

@@ -1,0 +1,51 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'class',
+  content: [
+    './index.html',
+    './{download,guide,faq,docs,support}/index.html',
+    './legal/{privacy,terms}/index.html',
+    './assets/js/**/*.js',
+  ],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#0A2540',
+        'on-primary': '#ffffff',
+        'primary-container': '#c8d8f0',
+        'on-primary-container': '#0A2540',
+        secondary: '#D4AF37',
+        'on-secondary': '#0A2540',
+        'secondary-container': '#fdf3c7',
+        'on-secondary-container': '#5a460a',
+        'surface-container-lowest': '#ffffff',
+        'surface-container-low': '#f5f7fb',
+        'surface-container': '#edf0f6',
+        'surface-container-high': '#e3e8f0',
+        'surface-container-highest': '#d6dce8',
+        'surface-bright': '#fafbfd',
+        'on-surface': '#111827',
+        'on-surface-variant': '#4b5563',
+        outline: '#6b7280',
+        'outline-variant': '#d1d5db',
+        background: '#f8f9fc',
+        'inverse-surface': '#1e2a3a',
+        'inverse-on-surface': '#9ca3af',
+        error: '#b91c1c',
+        'on-error': '#ffffff',
+      },
+      fontFamily: {
+        display: ['Source Serif 4', 'Georgia', 'serif'],
+        headline: ['Source Serif 4', 'Georgia', 'serif'],
+        body: ['Inter', 'sans-serif'],
+        label: ['Inter', 'sans-serif'],
+        arabic: ['Amiri', 'serif'],
+      },
+    },
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/container-queries'),
+  ],
+};
